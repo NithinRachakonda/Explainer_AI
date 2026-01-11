@@ -6,7 +6,7 @@ from transformers import pipeline
 
 # 1. PAGE SETUP
 st.set_page_config(page_title="Policy Navigator", page_icon="📄")
-st.title("📄 SNAP Policy Assistant")
+st.title("📄 Medicaid & SNAP Policy Assistant")
 
 # 2. RESOURCE LOADING (Cached)
 @st.cache_resource
@@ -56,7 +56,7 @@ if st.button("Get Answer") and query:
         answer = qa_pipe(
             prompt, 
             max_length=300, 
-            min_length=20, 
+            min_length=50, 
             repetition_penalty=2.5
         )[0]['generated_text']
         
